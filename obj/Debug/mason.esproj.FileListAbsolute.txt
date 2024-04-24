@@ -1,0 +1,2 @@
+C:\Users\kris\source\repos\mason\obj\Debug\mason.esproj.SuggestedBindingRedirects.cache
+C:\Users\kris\source\repos\mason\obj\Debug\mason.esproj.CoreCompileInputs.cache
