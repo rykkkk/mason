@@ -5,9 +5,14 @@ name: .NET
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
   pull_request:
     branches: [ "master" ]
+
+env:
+  DOTNET_VERSION: '6.0.x'
+  DOTNET_QUALITY: 'preview'
+  BUILD_CONFIG: Debug
 
 jobs:
   build:
@@ -19,10 +24,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 6.0.x
+        
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build -c $ --no-restore
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
